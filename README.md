@@ -1,25 +1,49 @@
 # 🏦 Bank Credit Risk Assessment System
 
-**End-to-end Bank Credit Risk Assessment System using LightGBM to predict loan default probability and support data-driven lending decisions.**
+End-to-end machine learning system to predict loan default risk using real-world banking data and support risk-aware, data-driven lending decisions.
 
 ---
 
 ## 📌 Executive Summary
 
 Banks face a critical challenge in balancing loan approvals with default risk.  
-This project presents a machine learning–based **Credit Risk Assessment System** that predicts the probability of loan default using applicant demographic, financial, and credit history data.
+This project builds a machine learning–based **Credit Risk Assessment System** that predicts the probability of loan default using applicant demographic, financial, and credit history data.
 
-The system is designed to handle **highly imbalanced real-world banking data**, apply business-aware evaluation metrics, and provide insights that help financial institutions make **data-driven and risk-sensitive lending decisions**.
+The solution is designed for **highly imbalanced real-world banking datasets** and emphasizes business-aware evaluation, interpretability, and responsible lending practices.
 
 ---
 
-## 📊 Dataset Risk Overview
+## 🎯 Problem Statement
+
+Loan defaults lead to significant financial losses for banks and lending institutions.  
+Traditional rule-based credit scoring systems struggle to capture complex customer behavior and scale with large datasets.
+
+This project aims to:
+- Identify high-risk applicants before loan approval  
+- Reduce false approvals of potential defaulters  
+- Support explainable and data-driven credit decisions  
+
+---
+
+## 🧠 Solution Architecture
+
+The system follows a modular and scalable machine learning pipeline:
+
+- Data ingestion from multiple banking data sources  
+- Exploratory Data Analysis (EDA) for risk understanding  
+- Feature engineering and preprocessing  
+- Model training with cross-validation  
+- Risk probability prediction for decision support  
+
+---
+
+## 📊 Dataset Overview & Risk Characteristics
 
 ![Target Distribution](images/target_distribution.png)
 
-- The dataset is highly imbalanced, with only **~8% default cases**, reflecting real-world banking scenarios  
-- Accuracy alone is insufficient for credit risk modeling due to asymmetric costs  
-- This motivates the use of **ROC-AUC, recall-focused metrics, and threshold optimization**
+- The dataset is highly imbalanced, with only **~8% default cases**  
+- Reflects real-world banking risk distributions  
+- Requires evaluation beyond accuracy, with emphasis on recall and risk sensitivity  
 
 ---
 
@@ -28,16 +52,14 @@ The system is designed to handle **highly imbalanced real-world banking data**, 
 ### Missing Values Assessment
 ![Missing Values](images/missing_values.png)
 
-- Several features exhibit high missingness, reflecting real-world banking data challenges  
-- Missing value patterns guided feature selection and imputation strategies  
-- Prevented noise from sparsely populated attributes  
+- Real-world banking data contains significant missingness  
+- Guided feature selection and imputation strategies  
 
 ### Feature Correlation Analysis
 ![Correlation Heatmap](images/correlation_heatmap.png)
 
 - External credit score features show the strongest relationship with default risk  
-- Credit-to-income ratio provides meaningful risk separation  
-- Low multicollinearity among selected predictors improves model stability
+- Low multicollinearity improves model stability  
 
 ---
 
@@ -46,23 +68,28 @@ The system is designed to handle **highly imbalanced real-world banking data**, 
 ### Age-Based Risk Analysis
 ![Age vs Default](images/age_vs_default.png)
 
-- Younger applicants exhibit a relatively higher default probability  
-- Risk decreases with financial maturity and stable employment history  
-- Age acts as a proxy for credit experience and repayment discipline  
+- Younger applicants show higher default probability  
+- Risk decreases with financial maturity and stable employment  
 
 ### Income Type Risk Analysis
 ![Income Type vs Default](images/income_type_vs_default.png)
 
-- Applicants with unstable or irregular income sources show higher default risk  
-- Salaried and pension-based income groups demonstrate stronger repayment behavior  
-- Income stability is a stronger risk indicator than income magnitude alone  
+- Unstable income sources correlate with higher default risk  
+- Income stability is more indicative than income amount  
 
-### Education Level Risk Analysis
-![Education vs Default](images/education_vs_default.png)
-
+### Education Level Insight
 - Higher education levels generally correlate with lower default rates  
-- Education reflects financial literacy and long-term earning consistency  
-- However, education alone is insufficient without supporting credit history  
+- Acts as a proxy for financial literacy and earning consistency  
+- Insufficient alone without supporting credit history  
+
+---
+
+## 🤖 Machine Learning Approach
+
+- LightGBM classifier optimized for imbalanced credit risk data  
+- Stratified K-Fold Cross-Validation for stable performance  
+- Business-driven threshold tuning  
+- Evaluation focused on risk-sensitive metrics  
 
 ---
 
@@ -71,71 +98,19 @@ The system is designed to handle **highly imbalanced real-world banking data**, 
 ### Confusion Matrix Analysis
 ![Confusion Matrix](images/confusion_matrix.png)
 
-- The model effectively distinguishes between defaulters and non-defaulters  
-- False negatives are carefully controlled to reduce high-risk loan approvals  
-- Prediction thresholds are aligned with real-world banking risk tolerance  
+- Effectively distinguishes defaulters and non-defaulters  
+- False negatives minimized to reduce high-risk approvals  
+- Thresholds aligned with banking risk tolerance  
 
 ---
 
-## 🔎 Model Explainability (Feature Importance)
+## 🔎 Model Explainability
 
 ![Feature Importance](images/feature_importance.png)
 
-- External credit history features contribute most to default prediction  
-- Credit utilization and repayment behavior outweigh demographic factors  
-- The model prioritizes financially meaningful signals over proxy attributes  
-
----
-
-## 📌 Overview
-
-Financial institutions face significant losses due to loan defaults.  
-This project addresses the problem by building a machine learning system that predicts **customer credit risk** using historical banking data, enabling **proactive and data-backed credit approval decisions**.
-
-The solution is designed with **real-world banking constraints**, focusing not only on model accuracy but also on **risk-sensitive decision making**.
-
----
-
-## 🧠 Solution Architecture
-
-The system follows a modular and scalable machine learning pipeline:
-
-- Data ingestion from multiple banking-related sources  
-- Exploratory Data Analysis (EDA) to understand risk patterns  
-- Feature engineering and preprocessing  
-- Model training using stratified cross-validation  
-- Risk probability prediction for decision support  
-
----
-
-## 🤖 Machine Learning Approach
-
-- Implemented **LightGBM Classifier** optimized for imbalanced credit risk data  
-- Used **Stratified K-Fold Cross-Validation** to ensure unbiased and stable performance  
-- Evaluated models using:
-  - ROC-AUC
-  - Confusion Matrix
-  - Classification Report  
-- Applied **business-driven probability thresholding** instead of default cut-offs to reduce high-risk false approvals  
-
-> This approach aligns model predictions with real-world banking risk tolerance.
-
----
-
-## 📊 Data & Feature Engineering
-
-- Integrated multiple banking data sources including application and bureau-related information  
-- Handled missing values and encoded categorical variables  
-- Scaled numerical features for model stability  
-- Performed EDA to analyze feature distributions and credit risk trends  
-
----
-
-## 📈 Results & Evaluation
-
-- Achieved **stable ROC-AUC performance** across cross-validation folds  
-- Optimized decision threshold to **minimize false negatives**, reducing potential default risk  
-- Final model balances **predictive performance and business impact**
+- Credit history and repayment behavior dominate predictions  
+- Demographic features play a secondary role  
+- Supports explainable and responsible lending decisions  
 
 ---
 
@@ -168,7 +143,7 @@ The system follows a modular and scalable machine learning pipeline:
 
 1. Clone the repository
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Lavinasonp/Home_credit_banking.git
    cd bank-credit-risk-system
    ```
 
@@ -184,29 +159,16 @@ The system follows a modular and scalable machine learning pipeline:
 
 ---
 
-## 🚀 Skills Demonstrated
+## 🎯 Key Takeaways
 
-- Applied Machine Learning for financial risk modeling  
-- Handling imbalanced datasets and business-driven evaluation  
-- End-to-end ML pipeline development  
-- Feature engineering and exploratory data analysis  
-- Model evaluation aligned with real-world decision constraints  
-- Clean, modular, and reusable ML code design  
+- Built an end-to-end credit risk assessment system aligned with real banking use cases  
+- Addressed imbalanced data using business-aware evaluation strategies  
+- Translated model outputs into actionable risk insights  
+- Emphasized interpretability and responsible AI practices  
 
 ---
 
-## 📌 Project Status
-
-This project follows **industry-level ML engineering practices** and is structured for:
-- Scalability  
-- Experimentation  
-- Reproducibility  
-
-Future improvements may include model explainability, hyperparameter optimization, and deployment.
-
----
-
-### ⭐ Why This Project Stands Out
+## ⭐ Why This Project Stands Out
 
 - Solves a real-world banking risk problem  
 - Uses industry-relevant machine learning techniques  
