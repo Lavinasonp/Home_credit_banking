@@ -77,6 +77,16 @@ The system is designed to handle **highly imbalanced real-world banking data**, 
 
 ---
 
+## 🔎 Model Explainability (Feature Importance)
+
+![Feature Importance](images/feature_importance.png)
+
+- External credit history features contribute most to default prediction  
+- Credit utilization and repayment behavior outweigh demographic factors  
+- The model prioritizes financially meaningful signals over proxy attributes  
+
+---
+
 ## 📌 Overview
 
 Financial institutions face significant losses due to loan defaults.  
