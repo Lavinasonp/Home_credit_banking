@@ -23,6 +23,24 @@ The system is designed to handle **highly imbalanced real-world banking data**, 
 
 ---
 
+## 🔍 Exploratory Data Analysis (EDA)
+
+### Missing Values Assessment
+![Missing Values](images/missing_values.png)
+
+- Several features exhibit high missingness, reflecting real-world banking data challenges  
+- Missing value patterns guided feature selection and imputation strategies  
+- Prevented noise from sparsely populated attributes  
+
+### Feature Correlation Analysis
+![Correlation Heatmap](images/correlation_heatmap.png)
+
+- External credit score features show the strongest relationship with default risk  
+- Credit-to-income ratio provides meaningful risk separation  
+- Low multicollinearity among selected predictors improves model stability
+
+---
+
 ## 📌 Overview
 
 Financial institutions face significant losses due to loan defaults.  
