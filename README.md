@@ -4,6 +4,25 @@
 
 ---
 
+## 📌 Executive Summary
+
+Banks face a critical challenge in balancing loan approvals with default risk.  
+This project presents a machine learning–based **Credit Risk Assessment System** that predicts the probability of loan default using applicant demographic, financial, and credit history data.
+
+The system is designed to handle **highly imbalanced real-world banking data**, apply business-aware evaluation metrics, and provide insights that help financial institutions make **data-driven and risk-sensitive lending decisions**.
+
+---
+
+## 📊 Dataset Risk Overview
+
+![Target Distribution](images/target_distribution.png)
+
+- The dataset is highly imbalanced, with only **~8% default cases**, reflecting real-world banking scenarios  
+- Accuracy alone is insufficient for credit risk modeling due to asymmetric costs  
+- This motivates the use of **ROC-AUC, recall-focused metrics, and threshold optimization**
+
+---
+
 ## 📌 Overview
 
 Financial institutions face significant losses due to loan defaults.  
