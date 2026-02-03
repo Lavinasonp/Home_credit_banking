@@ -66,6 +66,17 @@ The system is designed to handle **highly imbalanced real-world banking data**, 
 
 ---
 
+## 📈 Model Performance & Evaluation
+
+### Confusion Matrix Analysis
+![Confusion Matrix](images/confusion_matrix.png)
+
+- The model effectively distinguishes between defaulters and non-defaulters  
+- False negatives are carefully controlled to reduce high-risk loan approvals  
+- Prediction thresholds are aligned with real-world banking risk tolerance  
+
+---
+
 ## 📌 Overview
 
 Financial institutions face significant losses due to loan defaults.  
