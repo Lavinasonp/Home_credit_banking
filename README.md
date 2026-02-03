@@ -95,12 +95,20 @@ The system follows a modular and scalable machine learning pipeline:
 
 ## 📈 Model Performance & Evaluation
 
+### ROC Curve Analysis
+![ROC Curve](images/roc_curve.png)
+
+- Demonstrates the model’s ability to distinguish between defaulters and non-defaulters  
+- ROC-AUC is preferred over accuracy due to strong class imbalance  
+- Confirms stable discrimination power across risk thresholds  
+
 ### Confusion Matrix Analysis
 ![Confusion Matrix](images/confusion_matrix.png)
 
 - Effectively distinguishes defaulters and non-defaulters  
-- False negatives minimized to reduce high-risk approvals  
-- Thresholds aligned with banking risk tolerance  
+- False negatives are minimized to reduce high-risk loan approvals  
+- Thresholds are aligned with real-world banking risk tolerance  
+ 
 
 ---
 
