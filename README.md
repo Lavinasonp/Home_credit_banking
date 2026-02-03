@@ -41,6 +41,31 @@ The system is designed to handle **highly imbalanced real-world banking data**, 
 
 ---
 
+## 💡 Business Insights & Risk Patterns
+
+### Age-Based Risk Analysis
+![Age vs Default](images/age_vs_default.png)
+
+- Younger applicants exhibit a relatively higher default probability  
+- Risk decreases with financial maturity and stable employment history  
+- Age acts as a proxy for credit experience and repayment discipline  
+
+### Income Type Risk Analysis
+![Income Type vs Default](images/income_type_vs_default.png)
+
+- Applicants with unstable or irregular income sources show higher default risk  
+- Salaried and pension-based income groups demonstrate stronger repayment behavior  
+- Income stability is a stronger risk indicator than income magnitude alone  
+
+### Education Level Risk Analysis
+![Education vs Default](images/education_vs_default.png)
+
+- Higher education levels generally correlate with lower default rates  
+- Education reflects financial literacy and long-term earning consistency  
+- However, education alone is insufficient without supporting credit history  
+
+---
+
 ## 📌 Overview
 
 Financial institutions face significant losses due to loan defaults.  
